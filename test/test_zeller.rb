@@ -17,19 +17,43 @@ class TestZeller < MiniTest::Unit::TestCase
   	assert_equal(Zeller.calc(12,2012), Zeller.calc("December", 2012))
   end
 
-  def test_several_dates
+  def test_several_dates_1
   	assert_equal(1, Zeller.calc(12, 2013))
+  end
+
+  def test_several_dates_2
   	assert_equal(6, Zeller.calc( 3, 2013))
+  end
+
+  def test_several_dates_3
   	assert_equal(5, Zeller.calc( 3, 2012))
+  end
+
+  def test_several_dates_4
   	assert_equal(3, Zeller.calc( 3, 2011))
+  end
+
+  def test_several_dates_5
   	assert_equal(2, Zeller.calc( 1, 1900))
+  end
+
+  def test_several_dates_6
   	assert_equal(4, Zeller.calc( 1, 1800))
+  end
+
+  def test_several_dates_7
   	assert_equal(4, Zeller.calc( 3, 1899))
+  end
+
+  def test_several_dates_8
   	assert_equal(5, Zeller.calc( 3, 1900))
   end
 
-  def test_year_out_of_range
+  def test_year_out_of_range_high
   	assert_equal(ArgumentError, Zeller.calc(10,3001))
+  end
+
+  def test_year_out_of_range_low
   	assert_equal(ArgumentError, Zeller.calc(10,1450))
   end
 
