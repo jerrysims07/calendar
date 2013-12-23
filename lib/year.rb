@@ -1,5 +1,6 @@
 class Year
 	@yearNumber
+	attr_reader:yearNumber
 
 	def initialize(year)
 		@yearNumber = year
