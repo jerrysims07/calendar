@@ -1,4 +1,3 @@
-# require_relative 'helper'
 require 'minitest/autorun'
 
 class TestCalendar < MiniTest::Unit::TestCase

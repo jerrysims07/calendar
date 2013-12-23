@@ -1,7 +1,5 @@
-# require_relative 'helper'
-require_relative 'zeller.rb'
+require 'zeller'
 require 'minitest/autorun'
-
 
 class TestZeller < MiniTest::Unit::TestCase
 
@@ -10,7 +8,9 @@ class TestZeller < MiniTest::Unit::TestCase
   end
 
   def test_method_may_not_receive_less_than_two_arguments
-  	assert_equal(ArgumentError, Zeller.calc(2013))
+  	assert_raises ArgumentError do
+      Zeller.calc(2013)
+    end
   end
 
   def test_method_receives_string_month
@@ -50,11 +50,15 @@ class TestZeller < MiniTest::Unit::TestCase
   end
 
   def test_year_out_of_range_high
-  	assert_equal(ArgumentError, Zeller.calc(10,3001))
+  	assert_raises ArgumentError do 
+      Zeller.calc(10,3001)
+    end
   end
 
   def test_year_out_of_range_low
-  	assert_equal(ArgumentError, Zeller.calc(10,1450))
+    assert_raises ArgumentError do 
+      Zeller.calc(10,1799)
+    end
   end
 
 end

@@ -1,5 +1,5 @@
 require 'date'
-require_relative 'test_zeller'
+require_relative '../test/test_zeller'
 
 class Zeller
 

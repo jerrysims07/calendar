@@ -1,3 +1,5 @@
+require_relative "../test/test_year"
+
 class Year
 	@yearNumber
 	attr_reader:yearNumber
