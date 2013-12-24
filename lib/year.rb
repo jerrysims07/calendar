@@ -1,4 +1,4 @@
-require_relative "../test/test_year"
+# require_relative "../test/test_year"
 
 class Year
 	@yearNumber
@@ -8,13 +8,13 @@ class Year
 		@yearNumber = year
 	end
 
-	def isLeapYear
-		if @yearNumber % 4 == 0 
-			if(@yearNumber % 100 == 0 && @yearNumber % 400 == 0)
-				return true
-			else return false
-			end
-		else return false
+	def isLeapYear?
+		if(@leapYear % 4 == 0 && @leapYear % 100 != 0)
+			return true
+		elsif(@leapYear % 100 == 0 && @leapYear % 400 != 0)
+			return true
+		else 
+			return false
 		end
 	end
 

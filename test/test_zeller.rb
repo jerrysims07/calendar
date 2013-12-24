@@ -1,4 +1,4 @@
-require 'zeller'
+require_relative '../lib/zeller'
 require 'minitest/autorun'
 
 class TestZeller < MiniTest::Unit::TestCase
@@ -62,3 +62,4 @@ class TestZeller < MiniTest::Unit::TestCase
   end
 
 end
+
