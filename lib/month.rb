@@ -1,4 +1,5 @@
 class Month
+	@month
 	@numberOfDays
 	@firstDay
 
@@ -13,6 +14,7 @@ class Month
 		else @numberOfDays = 28
 		end
 		@firstDay = firstDay
+		@month = month
 	end
 
 	def print_individual_month
@@ -21,7 +23,10 @@ class Month
 	def print_month_for_full_year
 	end
 
-	def print_name
+	def print_name_for_full_year
+	end
+
+	def print_name_for_individual
 	end
 
 	def print_day_labels

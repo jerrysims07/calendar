@@ -9,9 +9,9 @@ class Year
 	end
 
 	def isLeapYear?
-		if(@leapYear % 4 == 0 && @leapYear % 100 != 0)
+		if(@yearNumber % 4 == 0 && @yearNumber % 100 != 0)
 			return true
-		elsif(@leapYear % 100 == 0 && @leapYear % 400 != 0)
+		elsif(@yearNumber % 100 == 0 && @yearNumber % 400 != 0)
 			return true
 		else 
 			return false
