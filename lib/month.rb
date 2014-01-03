@@ -2,6 +2,10 @@ class Month
 	@month
 	@numberOfDays
 	@firstDay
+	attr_reader:numberOfDays
+	attr_reader:firstDay
+	attr_reader:month
+
 
 	def initialize(month, firstDay, leap)
 		case month
@@ -9,9 +13,11 @@ class Month
 			@numberOfDays = 31
 		when 4,6,9,11
 			@numberOfDays = 30
-		elsif leap
-			@numberOfDays = 29
-		else @numberOfDays = 28
+		else
+	 		if leap 
+	 			@numberOfDays = 29
+			else @numberOfDays = 28
+			end
 		end
 		@firstDay = firstDay
 		@month = month
