@@ -47,7 +47,7 @@ class TestMonth < MiniTest::Unit::TestCase
 
 	def test_june_30_days
 		m = Month.new(6, 1, true)
-		assert_equal(31, m.numberOfDays)
+		assert_equal(30, m.numberOfDays)
 	end
 
 	def test_july_31_days
@@ -82,12 +82,16 @@ class TestMonth < MiniTest::Unit::TestCase
 
 	def test_print_month_name_for_full_year_printing
 		m = Month.new(1, 1, true)
-		assert_equal("        January       ", m.print_name_for_full_year)
+		assert_equal("       January       ", m.print_name_for_full_year)
 	end
 
 	def test_print_month_name_for_individual_printing
 		m = Month.new(1, 1, true)
-		assert_equal("     January 2013     ", m.print_name_for_individual)
+		assert_equal("     January 2013    ", m.print_name_for_individual)
+	end
+
+	def test_get_month_name
+		assert_equal("January", get_month_name(1))
 	end
 
 end 

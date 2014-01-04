@@ -21,18 +21,24 @@ class Month
 		end
 		@firstDay = firstDay
 		@month = month
-	end
-
-	def print_individual_month
-	end
-
-	def print_month_for_full_year
+		@monthName = get_month_name(month)
 	end
 
 	def print_name_for_full_year
+		numberOfSpaces = (21 - @monthName.length)/2
+		printLine = ""
+		numberOfSpaces.times do
+			printLine += " "
+		end
+		printLine += @monthName
+		until printLine.length == 21
+			printLine += " "
+		end
+		printLine
 	end
 
 	def print_name_for_individual
+		printLine = @monthName
 	end
 
 	def print_day_labels
@@ -41,4 +47,33 @@ class Month
 	def print_days
 	end
 
+end
+
+def get_month_name(monthNumber)
+	case monthNumber
+	when 1
+		return "January"
+	when 2
+		return "February"
+	when 3
+		return "March"
+	when 4
+		return "April"
+	when 5 
+		return "May"
+	when 6
+		return "June"
+	when 7
+		return "July"
+	when 8 
+		return "August"
+	when 9 
+		return "September"
+	when 10
+		return "October"
+	when 11
+		return "November"
+	when 12
+		return "December"
+	end
 end

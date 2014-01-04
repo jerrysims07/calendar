@@ -6,32 +6,32 @@ require 'minitest/autorun'
 class TestYear < MiniTest::Unit::TestCase
 
 	def test_new_year_creates_new_instance
-		y = Year.new("2012")
+		y = Year.new(2012)
 		assert_equal(Year, y.class)
 	end
 
 	def test_new_year_instance_assigns_year
-		y = Year.new("2012")
-		assert_equal("2012", y.yearNumber)
+		y = Year.new(2012)
+		assert_equal(2012, y.yearNumber)
 	end
 
 	def test_is_leap_year_div_by_4
-		y = Year.new("2012")
+		y = Year.new(2012)
 		assert_equal(true,y.isLeapYear?)
 	end
 
 	def test_is_leap_year_div_by_400
-		y = Year.new("2000")
+		y = Year.new(2000)
 		assert_equal(true,y.isLeapYear?)
 	end
 
 	def test_is_leap_year_not_div_by_4
-		y = Year.new("2011")
+		y = Year.new(2011)
 		assert_equal(false,y.isLeapYear?)
 	end
 
 	def test_is_leap_year_not_div_by_400
-		y = Year.new("1900")
+		y = Year.new(1900)
 		assert_equal(false,y.isLeapYear?)
 	end
 
