@@ -90,15 +90,23 @@ class Month
 			returnString += "\n"
 			i+=1
 		end
+		puts "\n"+returnString
 		returnString
 	end
 
-	def construct_individual_month_for_printing
+	def construct_month_for_printing
 		printLines = []
-		printLines.push(self.print_name_for_individual)
+		printLines.push(self.print_name_for_full_year)
 		printLines.push(self.print_day_labels)
 		printLines.push(self.print_days)
-		printLines
+		returnString = ""
+		i=0
+		printLines.length.times do
+			returnString += printLines[i]
+			returnString += "\n"
+			i+=1
+		end
+		returnString
 	end
 
 end
