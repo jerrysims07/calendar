@@ -13,9 +13,9 @@ class TestZeller < MiniTest::Unit::TestCase
     end
   end
 
-  def test_method_receives_string_month
-  	assert_equal(Zeller.calc(12,2012), Zeller.calc("December", 2012))
-  end
+  # def test_method_receives_string_month
+  # 	assert_equal(Zeller.calc(12,2012), Zeller.calc("December", 2012))
+  # end
 
   def test_several_dates_1
   	assert_equal(1, Zeller.calc(12, 2013))
@@ -47,6 +47,14 @@ class TestZeller < MiniTest::Unit::TestCase
 
   def test_several_dates_8
   	assert_equal(5, Zeller.calc( 3, 1900))
+  end
+
+  def test_several_dates_9
+    assert_equal(5, Zeller.calc( 3, 1900))
+  end
+
+  def test_several_dates_10
+    assert_equal(0, Zeller.calc( 3, 1800))
   end
 
   def test_year_out_of_range_high

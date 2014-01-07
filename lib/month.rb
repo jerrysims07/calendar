@@ -2,6 +2,7 @@ class Month
 	@month
 	@numberOfDays
 	@firstDay
+	@year
 	attr_reader:numberOfDays
 	attr_reader:firstDay
 	attr_reader:month
@@ -38,13 +39,66 @@ class Month
 	end
 
 	def print_name_for_individual
-		printLine = @monthName
+		numberOfSpaces = (21 - (@monthName.length+5))/2
+		printLine = ""
+		numberOfSpaces.times do
+			printLine += " "
+		end
+		printLine += @monthName + " "
 	end
 
 	def print_day_labels
+		"Su Mo Tu We Th Fr Sa "
 	end
 
 	def print_days
+		weeks = []
+		weeks[0] = []
+		# construct first week
+		# write the leading blanks before the first day
+		currentDay = 0
+		while currentDay < (@firstDay - 1)%7 do
+			weeks[0][currentDay] = "  "
+			currentDay+=1
+		end
+
+		# write the first week's actual days
+		dayOfMonth = 1
+		while currentDay <= 6 do
+			weeks[0].push (" "+dayOfMonth.to_s)
+			currentDay+=1
+			dayOfMonth+=1
+		end
+		i=0
+		while dayOfMonth <= @numberOfDays do
+			i+=1
+			weeks[i] = []
+			currentDay = 0
+			while dayOfMonth <= @numberOfDays && currentDay < 7 do
+				if dayOfMonth < 10
+					weeks[i].push (" "+dayOfMonth.to_s)
+				else weeks[i].push dayOfMonth
+				end
+				currentDay+=1
+				dayOfMonth+=1
+			end
+		end
+		returnString = ""
+		i= 0
+		weeks.length.times do
+			returnString += weeks[i].join(" ") 
+			returnString += "\n"
+			i+=1
+		end
+		returnString
+	end
+
+	def construct_individual_month_for_printing
+		printLines = []
+		printLines.push(self.print_name_for_individual)
+		printLines.push(self.print_day_labels)
+		printLines.push(self.print_days)
+		printLines
 	end
 
 end

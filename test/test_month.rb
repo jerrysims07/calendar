@@ -87,11 +87,42 @@ class TestMonth < MiniTest::Unit::TestCase
 
 	def test_print_month_name_for_individual_printing
 		m = Month.new(1, 1, true)
-		assert_equal("     January 2013    ", m.print_name_for_individual)
+		assert_equal("    January ", m.print_name_for_individual)
 	end
 
 	def test_get_month_name
 		assert_equal("January", get_month_name(1))
 	end
+
+	def test_print_label
+		m = Month.new(1, 1, true)
+		assert_equal("Su Mo Tu We Th Fr Sa ", m.print_day_labels)
+	end
+
+	def test_print_days
+		m = Month.new(1, 1, true)
+		expected_output = <<EOS
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+29 30 31 
+EOS
+		assert_equal(expected_output, m.print_days)
+	end
+
+# 	def test__individual_month__printing
+# 		m = Month.new(1, 1, true)
+# 		expected_output = <<EOS
+#     January 2012
+# Su Mo Tu We Th Fr Sa
+#  1  2  3  4  5  6  7
+#  8  9 10 11 12 13 14
+# 15 16 17 18 19 20 21
+# 22 23 24 25 26 27 28
+# 29 30 31
+# EOS
+# 		assert_equal(expected_output, m.construct_individual_month_for_printing)
+# 	end
 
 end 
