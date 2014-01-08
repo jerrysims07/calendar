@@ -57,4 +57,8 @@ EOS
 		assert_equal(expected_output, shell_output)
 	end
 
+	def test_the_big_test
+		assert_equal(`ruby cal.rb 2012`, `cal 2012`)
+	end
+
 end

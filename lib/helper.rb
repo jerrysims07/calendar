@@ -38,14 +38,14 @@ end
 
 def draw_three(one, two, three)
 	lines = []
-	lines[0] = one.print_name_for_full_year+" "+two.print_name_for_full_year+" "+three.print_name_for_full_year+"\n"
-	lines[1] = one.print_day_labels + "   " + two.print_day_labels + "   " + three.print_day_labels+"\n"
-	lines[2] = one.print_week_1 + "  " + two.print_week_1 + "  " + three.print_week_1 + "\n"
-	lines[3] = one.print_week_2_and_beyond(2)+ "   " + two.print_week_2_and_beyond(2)+ "   " + three.print_week_2_and_beyond(2)+ "\n"
-	lines[4] = one.print_week_2_and_beyond(3)+ "   " + two.print_week_2_and_beyond(3)+ "   " + three.print_week_2_and_beyond(3)+ "\n"
-	lines[5] = one.print_week_2_and_beyond(4)+ "   " + two.print_week_2_and_beyond(4)+ "   " + three.print_week_2_and_beyond(4)+ "\n"
-	lines[6] = one.print_week_2_and_beyond(5)+ "   " + two.print_week_2_and_beyond(5)+ "   " + three.print_week_2_and_beyond(5)+ "\n"
-	lines[7] = one.print_week_2_and_beyond(6)+ "   " + two.print_week_2_and_beyond(6)+ "   " + three.print_week_2_and_beyond(6)+ "\n"
+	lines[0] = one.print_name_for_full_year+" "+two.print_name_for_full_year+" "+three.print_name_for_full_year.rstrip+"\n"
+	lines[1] = one.print_day_labels + "  " + two.print_day_labels + "  " + three.print_day_labels.rstrip+"\n"
+	lines[2] = one.print_week_1 + " " + two.print_week_1 + " " + three.print_week_1.rstrip + "\n"
+	lines[3] = one.print_week_2_and_beyond(2)+ "  " + two.print_week_2_and_beyond(2)+ "  " + three.print_week_2_and_beyond(2).rstrip+ "\n"
+	lines[4] = one.print_week_2_and_beyond(3)+ "  " + two.print_week_2_and_beyond(3)+ "  " + three.print_week_2_and_beyond(3).rstrip+ "\n"
+	lines[5] = one.print_week_2_and_beyond(4)+ "  " + two.print_week_2_and_beyond(4)+ "  " + three.print_week_2_and_beyond(4).rstrip+ "\n"
+	lines[6] = one.print_week_2_and_beyond(5)+ "  " + two.print_week_2_and_beyond(5)+ "  " + three.print_week_2_and_beyond(5).rstrip+ "\n"
+	lines[7] = one.print_week_2_and_beyond(6)+ "  " + two.print_week_2_and_beyond(6)+ "  " + three.print_week_2_and_beyond(6).rstrip+ "\n"
 	returnString = lines.join("")
 	puts returnString
 end
