@@ -51,6 +51,42 @@ class Month
 		"Su Mo Tu We Th Fr Sa"
 	end
 
+	def print_week_1
+		# construct first week
+		# write the leading blanks before the first day
+		firstWeek = []
+		currentDay = 0
+		while currentDay < (@firstDay - 1)%7 do
+			firstWeek[currentDay] = "  "
+			currentDay+=1
+		end
+
+		# write the first week's actual days
+		dayOfMonth = 1
+		while currentDay <= 6 do
+			firstWeek.push (" "+dayOfMonth.to_s)
+			currentDay+=1
+			dayOfMonth+=1
+		end
+		returnString = " " + firstWeek.join(" ")
+	end
+
+	def print_week_2_and_beyond(week)
+		dayOfMonth = (((week-1) * 7)+2) - @firstDay
+		i=1
+		week = []
+		currentDay = 0
+		while dayOfMonth <= @numberOfDays && currentDay < 7 do
+			if dayOfMonth < 10
+				week.push (" "+dayOfMonth.to_s)
+			else week.push dayOfMonth
+			end
+			currentDay+=1
+			dayOfMonth+=1
+		end
+		returnString = " " + week.join(" ")		
+	end
+
 	def print_days
 		weeks = []
 		weeks[0] = []

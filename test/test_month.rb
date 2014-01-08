@@ -126,4 +126,25 @@ class TestMonth < MiniTest::Unit::TestCase
 		assert_equal(expected_output, m.construct_month_for_printing)
 	end
 
+	def test_print_week_1_start_day_1
+		m = Month.new(1, 1, true)
+		assert_equal("  1  2  3  4  5  6  7", m.print_week_1)
+	end
+
+	def test_print_week_1_start_day_not_1
+		m = Month.new(1, 4, true)
+		assert_equal("           1  2  3  4", m.print_week_1)
+	end
+
+	def test_print_week_2_and_beyond_regular
+		m = Month.new(1, 1, true)
+		assert_equal("  8  9 10 11 12 13 14", m.print_week_2_and_beyond(2))
+	end
+
+	def test_print_week_2_and_beyond_last_week
+		m = Month.new(2, 1, true)
+		assert_equal(" 29", m.print_week_2_and_beyond(5))
+	end
+
+
 end 

@@ -37,7 +37,7 @@ class TestYear < MiniTest::Unit::TestCase
 
 	def test_print_year
 		y = Year.new(2012)
-		assert_equal("                    2012", y.print_year)
+		assert_equal("                             2012"+"\n", y.print_year)
 	end
 
 end 

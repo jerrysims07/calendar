@@ -19,7 +19,7 @@ class Year
 	end
 
 	def print_year
-		returnString = "                    "+@yearNumber.to_s
+		returnString = "                             "+@yearNumber.to_s+"\n"
 	end
 
 end

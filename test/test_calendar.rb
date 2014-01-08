@@ -17,7 +17,7 @@ EOS
 	end
 
 	def test_full_year_leap
-		shell_output = 'ruby cal.rb 2012'
+		shell_output = `ruby cal.rb 2012`
 		expected_output = <<EOS
                              2012
 
