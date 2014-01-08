@@ -64,7 +64,7 @@ class Month
 		# write the first week's actual days
 		dayOfMonth = 1
 		while currentDay <= 6 do
-			firstWeek.push (" "+dayOfMonth.to_s)
+			firstWeek.push (dayOfMonth.to_s+" ")
 			currentDay+=1
 			dayOfMonth+=1
 		end
@@ -72,6 +72,9 @@ class Month
 	end
 
 	def print_week_2_and_beyond(week)
+		if @firstDay == 0
+			@firstDay = 7
+		end
 		dayOfMonth = (((week-1) * 7)+2) - @firstDay
 		i=1
 		week = []
@@ -84,7 +87,11 @@ class Month
 			currentDay+=1
 			dayOfMonth+=1
 		end
-		returnString = " " + week.join(" ")		
+		while(currentDay < 7) do
+			week.push("  ")
+			currentDay += 1
+		end
+		returnString = week.join(" ")		
 	end
 
 	def print_days
