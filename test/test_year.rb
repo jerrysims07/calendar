@@ -17,22 +17,27 @@ class TestYear < MiniTest::Unit::TestCase
 
 	def test_is_leap_year_div_by_4
 		y = Year.new(2012)
-		assert_equal(true,y.isLeapYear?)
+		assert_equal(true,y.is_leap_year?)
 	end
 
 	def test_is_leap_year_div_by_400
 		y = Year.new(2000)
-		assert_equal(true,y.isLeapYear?)
+		assert_equal(true,y.is_leap_year?)
 	end
 
 	def test_is_leap_year_not_div_by_4
 		y = Year.new(2011)
-		assert_equal(false,y.isLeapYear?)
+		assert_equal(false,y.is_leap_year?)
 	end
 
 	def test_is_leap_year_not_div_by_400
 		y = Year.new(1900)
-		assert_equal(false,y.isLeapYear?)
+		assert_equal(false,y.is_leap_year?)
+	end
+
+	def test_print_year
+		y = Year.new(2012)
+		assert_equal("                    2012", y.print_year)
 	end
 
 end 

@@ -8,7 +8,7 @@ class Year
 		@yearNumber = year
 	end
 
-	def isLeapYear?
+	def is_leap_year?
 		if @yearNumber % 4 == 0 && @yearNumber % 100 != 0
 			return true
 		elsif @yearNumber % 100 == 0 && @yearNumber % 400 == 0
@@ -16,6 +16,10 @@ class Year
 		else
 			return false
 		end
+	end
+
+	def print_year
+		returnString = "                    "+@yearNumber.to_s
 	end
 
 end

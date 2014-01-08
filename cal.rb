@@ -1,4 +1,4 @@
-require_relative "lib/helper"
+require_relative "./lib/helper"
 
 if(ARGV.length == 2)
 	month = ARGV[0]
@@ -8,6 +8,4 @@ else
 	year = ARGV[0]
 	process_full_year(year)
 end
-
-puts "hello, world"
 

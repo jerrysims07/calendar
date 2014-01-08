@@ -26,7 +26,7 @@ class Month
 	end
 
 	def print_name_for_full_year
-		numberOfSpaces = (21 - @monthName.length)/2
+		numberOfSpaces = (20 - @monthName.length)/2
 		printLine = ""
 		numberOfSpaces.times do
 			printLine += " "
@@ -39,7 +39,7 @@ class Month
 	end
 
 	def print_name_for_individual
-		numberOfSpaces = (21 - (@monthName.length+5))/2
+		numberOfSpaces = (20 - (@monthName.length+5))/2
 		printLine = ""
 		numberOfSpaces.times do
 			printLine += " "
@@ -48,7 +48,7 @@ class Month
 	end
 
 	def print_day_labels
-		"Su Mo Tu We Th Fr Sa "
+		"Su Mo Tu We Th Fr Sa"
 	end
 
 	def print_days
@@ -90,13 +90,11 @@ class Month
 			returnString += "\n"
 			i+=1
 		end
-		puts "\n"+returnString
 		returnString
 	end
 
 	def construct_month_for_printing
 		printLines = []
-		printLines.push(self.print_name_for_full_year)
 		printLines.push(self.print_day_labels)
 		printLines.push(self.print_days)
 		returnString = ""

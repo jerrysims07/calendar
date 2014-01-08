@@ -82,7 +82,7 @@ class TestMonth < MiniTest::Unit::TestCase
 
 	def test_print_month_name_for_full_year_printing
 		m = Month.new(1, 1, true)
-		assert_equal("       January       ", m.print_name_for_full_year)
+		assert_equal("      January        ", m.print_name_for_full_year)
 	end
 
 	def test_print_month_name_for_individual_printing
@@ -96,7 +96,7 @@ class TestMonth < MiniTest::Unit::TestCase
 
 	def test_print_label
 		m = Month.new(1, 1, true)
-		assert_equal("Su Mo Tu We Th Fr Sa ", m.print_day_labels)
+		assert_equal("Su Mo Tu We Th Fr Sa", m.print_day_labels)
 	end
 
 	def test_print_days
@@ -115,8 +115,7 @@ class TestMonth < MiniTest::Unit::TestCase
 	def test__individual_month__printing
 		m = Month.new(1, 1, true)
 		expected_output = 
-"       January       
-Su Mo Tu We Th Fr Sa 
+"Su Mo Tu We Th Fr Sa
  1  2  3  4  5  6  7
  8  9 10 11 12 13 14
 15 16 17 18 19 20 21
