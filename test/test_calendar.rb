@@ -12,6 +12,7 @@ Su Mo Tu We Th Fr Sa
 15 16 17 18 19 20 21
 22 23 24 25 26 27 28
 
+
 EOS
 	assert_equal(expected_output, shell_output)
 	end
@@ -57,8 +58,68 @@ EOS
 		assert_equal(expected_output, shell_output)
 	end
 
+	def test_overall_individual_month
+		assert_equal(`cal 2 2012`, `ruby cal.rb 2 2012` )
+	end
+
+	def test_overall_individual_month_2
+		assert_equal(`cal 3 2012`, `ruby cal.rb 3 2012` )
+	end
+
+	def test_overall_individual_month_3
+		assert_equal(`cal 1 1800`, `ruby cal.rb 1 1800`)
+	end
+
+	def test_overall_individual_month_4
+		assert_equal( `cal 3 2999`, `ruby cal.rb 3 2999`)
+	end
+
+	def test_overall_individual_month_5
+		assert_equal(`cal 2 1900`, `ruby cal.rb 2 1900`)
+	end
+
+	def test_overall_individual_month_6
+		assert_equal(`cal 3 1900`, `ruby cal.rb 3 1900`)
+	end
+
+	def test_overall_individual_month_7
+		assert_equal(`cal 2 2000`, `ruby cal.rb 2 2000`)
+	end
+
+	def test_overall_individual_month_7
+		assert_equal(`cal 3 2000`,`ruby cal.rb 3 2000`)
+	end
+
 	def test_the_big_test
-		assert_equal(`ruby cal.rb 2012`, `cal 2012`)
+		assert_equal(`cal 2012`, `ruby cal.rb 2012`)
+	end
+
+	def test_the_big_test
+		assert_equal(`cal 1900`, `ruby cal.rb 1900`)
+	end
+
+	def test_the_big_test
+		assert_equal(`cal 2000`, `ruby cal.rb 2000`)
+	end
+
+	def test_the_big_test
+		assert_equal(`cal 1899`, `ruby cal.rb 1899`)
+	end
+
+	def test_the_big_test
+		assert_equal(`cal 3000`, `ruby cal.rb 3000`)
+	end
+
+	def test_the_big_test
+		assert_equal(`cal 2014`, `ruby cal.rb 2014` )
+	end
+
+	def test_2011
+		assert_equal(`cal 2011`, `ruby cal.rb 2011`)
+	end
+
+	def test_7_2011
+		assert_equal(`cal 7 2011`, `ruby cal.rb 7 2011`)
 	end
 
 end

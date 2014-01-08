@@ -138,16 +138,24 @@ class Month
 
 	def construct_month_for_printing
 		printLines = []
-		printLines.push(self.print_day_labels)
-		printLines.push(self.print_days)
-		returnString = ""
-		i=0
-		printLines.length.times do
-			returnString += printLines[i]
-			returnString += "\n"
-			i+=1
-		end
-		returnString
+		printLines.push(self.print_day_labels.rstrip+"\n")
+		printLines.push(self.print_week_1.rstrip+"\n")
+		printLines.push(self.print_week_2_and_beyond(2).rstrip+"\n")
+		printLines.push(self.print_week_2_and_beyond(3).rstrip+"\n")
+		printLines.push(self.print_week_2_and_beyond(4).rstrip+"\n")
+		printLines.push(self.print_week_2_and_beyond(5).rstrip+"\n")
+		printLines.push(self.print_week_2_and_beyond(6).rstrip+"\n")
+		# printLines.push(self.print_days)
+		# returnString = ""
+		# i=0
+		# printLines.length.times do
+		# 	returnString += printLines[i]
+		# 	i+=1
+		# 	if i < printLines.length 
+		# 		returnString += "\n" 
+		# 	end
+		# end
+		printLines.join("")
 	end
 
 end
