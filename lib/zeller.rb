@@ -24,8 +24,9 @@ class Zeller
 		yearOfCentury = year % 100
 		century = (year / 100).floor
 
-		dayOfWeek = (1 + ((13 * (adjustedMonth+1))/5).floor + yearOfCentury + (yearOfCentury/4).floor + (century/4).floor - (2 * century)) % 7
-		dayOfWeek
+		dayOfWeek = (1 + ((13 * (adjustedMonth+1))/5).floor + 
+								yearOfCentury + (yearOfCentury/4).floor + 
+								(century/4).floor - (2 * century)) % 7
 	end
 
 end

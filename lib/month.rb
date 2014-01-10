@@ -9,6 +9,13 @@ class Month
 
 
 	def initialize(month, firstDay, leap)
+		@numberOfDays = get_number_of_days(month, leap)
+		@firstDay = firstDay
+		@month = month
+		@monthName = get_month_name(month)
+	end
+
+	def get_number_of_days(month, leap)
 		case month
 		when 1,3,5,7,8,10,12
 			@numberOfDays = 31
@@ -20,10 +27,8 @@ class Month
 			else @numberOfDays = 28
 			end
 		end
-		@firstDay = firstDay
-		@month = month
-		@monthName = get_month_name(month)
 	end
+
 
 	def print_name_for_full_year
 		numberOfSpaces = (20 - @monthName.length)/2
@@ -94,47 +99,6 @@ class Month
 		returnString = week.join(" ")		
 	end
 
-	def print_days
-		weeks = []
-		weeks[0] = []
-		# construct first week
-		# write the leading blanks before the first day
-		currentDay = 0
-		while currentDay < (@firstDay - 1)%7 do
-			weeks[0][currentDay] = "  "
-			currentDay+=1
-		end
-
-		# write the first week's actual days
-		dayOfMonth = 1
-		while currentDay <= 6 do
-			weeks[0].push (" "+dayOfMonth.to_s)
-			currentDay+=1
-			dayOfMonth+=1
-		end
-		i=0
-		while dayOfMonth <= @numberOfDays do
-			i+=1
-			weeks[i] = []
-			currentDay = 0
-			while dayOfMonth <= @numberOfDays && currentDay < 7 do
-				if dayOfMonth < 10
-					weeks[i].push (" "+dayOfMonth.to_s)
-				else weeks[i].push dayOfMonth
-				end
-				currentDay+=1
-				dayOfMonth+=1
-			end
-		end
-		returnString = ""
-		i= 0
-		weeks.length.times do
-			returnString += weeks[i].join(" ") 
-			returnString += "\n"
-			i+=1
-		end
-		returnString
-	end
 
 	def construct_month_for_printing
 		printLines = []
@@ -145,16 +109,6 @@ class Month
 		printLines.push(self.print_week_2_and_beyond(4).rstrip+"\n")
 		printLines.push(self.print_week_2_and_beyond(5).rstrip+"\n")
 		printLines.push(self.print_week_2_and_beyond(6).rstrip+"\n")
-		# printLines.push(self.print_days)
-		# returnString = ""
-		# i=0
-		# printLines.length.times do
-		# 	returnString += printLines[i]
-		# 	i+=1
-		# 	if i < printLines.length 
-		# 		returnString += "\n" 
-		# 	end
-		# end
 		printLines.join("")
 	end
 
