@@ -46,9 +46,7 @@ class Month
 	def print_name_for_individual
 		numberOfSpaces = (20 - (@monthName.length+5))/2
 		printLine = ""
-		numberOfSpaces.times do
-			printLine += " "
-		end
+		printLine += (" " * numberOfSpaces)
 		printLine += @monthName + " "
 	end
 
@@ -80,10 +78,11 @@ class Month
 		if @firstDay == 0
 			@firstDay = 7
 		end
+		# set to date of first day of that week
 		dayOfMonth = (((week-1) * 7)+2) - @firstDay
-		i=1
 		week = []
 		currentDay = 0
+
 		while dayOfMonth <= @numberOfDays && currentDay < 7 do
 			if dayOfMonth < 10
 				week.push (" "+dayOfMonth.to_s)
@@ -104,11 +103,9 @@ class Month
 		printLines = []
 		printLines.push(self.print_day_labels.rstrip+"\n")
 		printLines.push(self.print_week_1.rstrip+"\n")
-		printLines.push(self.print_week_2_and_beyond(2).rstrip+"\n")
-		printLines.push(self.print_week_2_and_beyond(3).rstrip+"\n")
-		printLines.push(self.print_week_2_and_beyond(4).rstrip+"\n")
-		printLines.push(self.print_week_2_and_beyond(5).rstrip+"\n")
-		printLines.push(self.print_week_2_and_beyond(6).rstrip+"\n")
+		5.times do |i|
+			printLines.push(self.print_week_2_and_beyond(i+2).rstrip+"\n")
+		end
 		printLines.join("")
 	end
 
