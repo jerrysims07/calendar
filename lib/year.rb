@@ -40,6 +40,13 @@ class Year
     result << name_labels(q)
     result = clean_up result
     result << day_labels
+    result << weeks(q)
+    result
+  end
+
+  def weeks(q)
+    addition = ""
+    result = ""
     6.times do |week_num|
       3.times do |i|
         addition = @months[i+(q*3)].weeks[week_num].ljust(20) << "  "
