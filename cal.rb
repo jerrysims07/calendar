@@ -8,4 +8,3 @@ else
 	year = ARGV[0]
 	process_full_year(year)
 end
-

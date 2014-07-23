@@ -12,7 +12,7 @@ class TestYear < MiniTest::Unit::TestCase
 
 	def test_new_year_instance_assigns_year
 		y = Year.new(2012)
-		assert_equal(2012, y.yearNumber)
+		assert_equal(2012, y.year)
 	end
 
 	def test_is_leap_year_div_by_4
@@ -37,7 +37,7 @@ class TestYear < MiniTest::Unit::TestCase
 
 	def test_print_year
 		y = Year.new(2012)
-		assert_equal("                             2012"+"\n", y.print_year)
+		assert_equal("                             2012"+"\n", y.print_year_label)
 	end
 
-end 
+end

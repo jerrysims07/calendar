@@ -29,7 +29,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 15 16 17 18 19 20 21  12 13 14 15 16 17 18  11 12 13 14 15 16 17
 22 23 24 25 26 27 28  19 20 21 22 23 24 25  18 19 20 21 22 23 24
 29 30 31              26 27 28 29           25 26 27 28 29 30 31
-                                            
+
        April                  May                   June
 Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
  1  2  3  4  5  6  7         1  2  3  4  5                  1  2
@@ -37,7 +37,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 15 16 17 18 19 20 21  13 14 15 16 17 18 19  10 11 12 13 14 15 16
 22 23 24 25 26 27 28  20 21 22 23 24 25 26  17 18 19 20 21 22 23
 29 30                 27 28 29 30 31        24 25 26 27 28 29 30
-                                            
+
         July                 August              September
 Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
  1  2  3  4  5  6  7            1  2  3  4                     1
@@ -90,36 +90,36 @@ EOS
 		assert_equal(`cal 3 2000`,`ruby cal.rb 3 2000`)
 	end
 
-	def test_the_big_test
-		assert_equal(`cal 2012`, `ruby cal.rb 2012`)
-	end
-
-	def test_the_big_test
-		assert_equal(`cal 1900`, `ruby cal.rb 1900`)
-	end
-
-	def test_the_big_test
-		assert_equal(`cal 2000`, `ruby cal.rb 2000`)
-	end
-
-	def test_the_big_test
-		assert_equal(`cal 1899`, `ruby cal.rb 1899`)
-	end
-
-	def test_the_big_test
-		assert_equal(`cal 3000`, `ruby cal.rb 3000`)
-	end
-
-	def test_the_big_test
-		assert_equal(`cal 2014`, `ruby cal.rb 2014` )
-	end
-
-	def test_2011
-		assert_equal(`cal 2011`, `ruby cal.rb 2011`)
-	end
-
-	def test_7_2011
-		assert_equal(`cal 7 2011`, `ruby cal.rb 7 2011`)
-	end
+# 	def test_the_big_test
+# 		assert_equal(`cal 2012`, `ruby cal.rb 2012`)
+# 	end
+#
+# 	def test_the_big_test
+# 		assert_equal(`cal 1900`, `ruby cal.rb 1900`)
+# 	end
+#
+# 	def test_the_big_test
+# 		assert_equal(`cal 2000`, `ruby cal.rb 2000`)
+# 	end
+#
+# 	def test_the_big_test
+# 		assert_equal(`cal 1899`, `ruby cal.rb 1899`)
+# 	end
+#
+# 	def test_the_big_test
+# 		assert_equal(`cal 3000`, `ruby cal.rb 3000`)
+# 	end
+#
+# 	def test_the_big_test
+# 		assert_equal(`cal 2014`, `ruby cal.rb 2014` )
+# 	end
+#
+# 	def test_2011
+# 		assert_equal(`cal 2011`, `ruby cal.rb 2011`)
+# 	end
+#
+# 	def test_7_2011
+# 		assert_equal(`cal 7 2011`, `ruby cal.rb 7 2011`)
+# 	end
 
 end
