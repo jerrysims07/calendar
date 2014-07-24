@@ -6,102 +6,102 @@ require 'minitest/autorun'
 class TestMonth < MiniTest::Unit::TestCase
 
 	def test_new_month_creates_new_instance
-		m = Month.new(3, 1, true)
+		m = Month.new(3, 1, 2012)
 		assert_equal(Month, m.class)
 	end
 
 	def test_new_month_instance_assigns_month
-		m = Month.new(3, 1, true)
+		m = Month.new(3, 1, 2012)
 		assert_equal(3, m.month)
 	end
 
 	def test_february_leap_year_is_29_days
-		m = Month.new(2, 1, true)
+		m = Month.new(2, 1, 2012)
 		assert_equal(29, m.length)
 	end
 
 	def test_february_non_leap_year_is_28_days
-		m = Month.new(2, 1, false)
+		m = Month.new(2, 1, 2011)
 		assert_equal(28, m.length)
 	end
 
 	def test_january_31_days
-		m = Month.new(1, 1, true)
+		m = Month.new(1, 1, 2012)
 		assert_equal(31, m.length)
 	end
 
 	def test_march_31_days
-		m = Month.new(3, 1, true)
+		m = Month.new(3, 1, 2012)
 		assert_equal(31, m.length)
 	end
 
 	def test_april_30_days
-		m = Month.new(4, 1, true)
+		m = Month.new(4, 1, 2012)
 		assert_equal(30, m.length)
 	end
 
 	def test_may_31_days
-		m = Month.new(5, 1, true)
+		m = Month.new(5, 1, 2012)
 		assert_equal(31, m.length)
 	end
 
 	def test_june_30_days
-		m = Month.new(6, 1, true)
+		m = Month.new(6, 1, 2012)
 		assert_equal(30, m.length)
 	end
 
 	def test_july_31_days
-		m = Month.new(7, 1, true)
+		m = Month.new(7, 1, 2012)
 		assert_equal(31, m.length)
 	end
 
 	def test_august_31_days
-		m = Month.new(8, 1, true)
+		m = Month.new(8, 1, 2012)
 		assert_equal(31, m.length)
 	end
 
 	def test_september_30_days
-		m = Month.new(9, 1, true)
+		m = Month.new(9, 1, 2012)
 		assert_equal(30, m.length)
 	end
 
 	def test_october_31_days
-		m = Month.new(10, 1, true)
+		m = Month.new(10, 1, 2012)
 		assert_equal(31, m.length)
 	end
 
 	def test_november_30_days
-		m = Month.new(11, 1, true)
+		m = Month.new(11, 1, 2012)
 		assert_equal(30, m.length)
 	end
 
 	def test_december_31_days
-		m = Month.new(12, 1, true)
+		m = Month.new(12, 1, 2012)
 		assert_equal(31, m.length)
 	end
 
 	def test_print_month_name_for_full_year_printing
-		m = Month.new(1, 1, true)
+		m = Month.new(1, 1, 2012)
 		assert_equal("      January       ", m.print_name_for_full_year)
 	end
 
 	def test_print_month_name_for_individual_printing
-		m = Month.new(1, 1, true)
+		m = Month.new(1, 1, 2012)
 		assert_equal("    January ", m.print_name_for_individual)
 	end
 
 	def test_get_month_name
-		m = Month.new(1, 1, true)
+		m = Month.new(1, 1, 2012)
 		assert_equal("January", m.month_name)
 	end
 
 	def test_print_label
-		m = Month.new(1, 1, true)
+		m = Month.new(1, 1, 2012)
 		assert_equal("Su Mo Tu We Th Fr Sa", m.print_day_labels)
 	end
 
 	def test_dec_2012
-		m = Month.new(12, 0, true)
+		m = Month.new(12, 0, 2012)
 		expected_output =
 "   December 2012
 Su Mo Tu We Th Fr Sa
@@ -117,8 +117,7 @@ Su Mo Tu We Th Fr Sa
 	end
 
 	def test_correct_length_for_feb_2012
-		y = Year.new(2012)
-		m = Month.new(2,4,y.is_leap_year?)
+		m = Month.new(2,4, 2012)
 		assert_equal(29, m.length)
 	end
 # 	def test__individual_month__printing

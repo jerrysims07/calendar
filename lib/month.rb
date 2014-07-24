@@ -2,10 +2,10 @@ class Month
 
   attr_accessor :month
 
-  def initialize (month, first_day, leap)
+  def initialize (month, first_day, year)
     @month = month
     @first_day = first_day
-    @leap = leap
+    @year = Year.new(year)
   end
 
   def length
@@ -15,7 +15,7 @@ class Month
     when 4,6,9,11
       30
     when 2
-      @leap ? 29 : 28
+      @year.is_leap_year? ? 29 : 28
     end
   end
 

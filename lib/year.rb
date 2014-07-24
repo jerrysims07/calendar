@@ -72,7 +72,7 @@ class Year
   def generate_months
     months = []
     12.times do |i|
-      months[i] = Month.new((i+1), Zeller.calc((i+1), @year), is_leap_year?)
+      months[i] = Month.new((i+1), Zeller.calc((i+1), @year), @year)
     end
     months
   end
