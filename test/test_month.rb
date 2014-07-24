@@ -80,19 +80,19 @@ class TestMonth < MiniTest::Unit::TestCase
 		assert_equal(31, m.length)
 	end
 
-	def test_print_month_name_for_full_year_printing
+	def test_print_name_for_full_year_printing
 		m = Month.new(1, 1, 2012)
 		assert_equal("      January       ", m.print_name_for_full_year)
 	end
 
-	def test_print_month_name_for_individual_printing
+	def test_print_name_for_individual_printing
 		m = Month.new(1, 1, 2012)
 		assert_equal("    January ", m.print_name_for_individual)
 	end
 
-	def test_get_month_name
+	def test_get_name
 		m = Month.new(1, 1, 2012)
-		assert_equal("January", m.month_name)
+		assert_equal("January", m.name)
 	end
 
 	def test_print_label

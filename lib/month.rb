@@ -1,5 +1,10 @@
 class Month
 
+  MONTHS = [nil,  "January",  "February",  "March",
+                  "April",    "May",       "June",
+                  "July",     "August",    "September",
+                  "October",  "November",  "December" ]
+
   attr_accessor :month
 
   def initialize (month, first_day, year)
@@ -20,36 +25,11 @@ class Month
   end
 
   def print_name_for_full_year
-    month_name.center(20)
+    name.center(20)
   end
 
-  def month_name
-    case @month
-    when 1
-      "January"
-    when 2
-      "February"
-    when 3
-      "March"
-    when 4
-      "April"
-    when 5
-      "May"
-    when 6
-      "June"
-    when 7
-      "July"
-    when 8
-      "August"
-    when 9
-      "September"
-    when 10
-      "October"
-    when 11
-      "November"
-    when 12
-      "December"
-    end
+  def name
+    MONTHS[@month]
   end
 
   def print_day_labels
@@ -80,7 +60,7 @@ class Month
   end
 
   def print_name_for_individual
-    (month_name + "     ").center(20).rstrip + " "
+    (name + "     ").center(20).rstrip + " "
   end
 
 private

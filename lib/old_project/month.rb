@@ -12,7 +12,7 @@ class Month
 		@numberOfDays = get_number_of_days(month, leap)
 		@firstDay = firstDay
 		@month = month
-		@monthName = get_month_name(month)
+		@monthName = get_name(month)
 	end
 
 	def get_number_of_days(month, leap)
@@ -111,7 +111,7 @@ class Month
 
 end
 
-def get_month_name(monthNumber)
+def get_name(monthNumber)
 	case monthNumber
 	when 1
 		return "January"
