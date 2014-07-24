@@ -15,7 +15,7 @@ class Month
     when 4,6,9,11
       30
     when 2
-      @year.is_leap_year? ? 29 : 28
+      @year.leap? ? 29 : 28
     end
   end
 

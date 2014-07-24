@@ -8,7 +8,7 @@ class Year
 		@yearNumber = year
 	end
 
-	def is_leap_year?
+	def leap?
 		if @yearNumber % 4 == 0 && @yearNumber % 100 != 0
 			return true
 		elsif @yearNumber % 100 == 0 && @yearNumber % 400 == 0

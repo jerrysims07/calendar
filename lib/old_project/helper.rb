@@ -4,7 +4,7 @@ require_relative "./zeller"
 
 def process_one_month(month, year)
 	y = Year.new(year.to_i)
-	m = Month.new(month.to_i, Zeller.calc(month.to_i,year.to_i), y.is_leap_year?)
+	m = Month.new(month.to_i, Zeller.calc(month.to_i,year.to_i), y.leap?)
 
 	printString =  m.print_name_for_individual  + year + "\n"
 	printString += m.construct_month_for_printing
@@ -15,7 +15,7 @@ end
 def process_full_year(year)
 	# construct the 12 months
 	y = Year.new(year)
-	months = generate_months(year, y.is_leap_year?)
+	months = generate_months(year, y.leap?)
 
 	puts y.print_year + "\n"
 	4.times do |i|

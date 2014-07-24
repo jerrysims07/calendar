@@ -6,7 +6,7 @@ class Year
     @year = year.to_i
   end
 
-  def is_leap_year?
+  def leap?
     return true if @year % 4 == 0 && @year % 100 != 0
     return true if @year % 400 == 0
     return false
