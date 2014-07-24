@@ -15,11 +15,7 @@ class Month
     when 4,6,9,11
       30
     when 2
-      if @leap
-        29
-      else
-        28
-      end
+      @leap ? 29 : 28
     end
   end
 
